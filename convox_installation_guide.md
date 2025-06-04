@@ -269,6 +269,7 @@ select * from convoxccs_agent_details;
 ```
 
 Insert data:
+- replace the IP in to your IP
 
 ```sql
 INSERT INTO convoxccs_servers VALUES (3,'Normal Server','172.16.13.110','Y','172.16.13.110',5038,'convox','convox','updateconvox','listenconvox','sendconvox','N','N','FILE',0,0);
