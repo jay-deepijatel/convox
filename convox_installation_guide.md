@@ -197,7 +197,7 @@ systemctl enable mariadb
 Download:
 
 ```bash
-wget https://dtelhelp.deepija.com/Hymavathi/convoxccs-3.2.4_c58a11ff.zip
+wget https://dtelhelp.deepija.com/Fathima/convoxccs-3.2.4_c58a11ff.zip
 cd /usr/src/packages
 unzip convoxccs-3.2.4_c58a11ff.zip
 cd convoxccs\ 3.2
