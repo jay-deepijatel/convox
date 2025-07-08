@@ -1,19 +1,6 @@
 
 # 3.2 Installation
 
----
-
-## Convox Versions
-
-- 3.0 (unavailable)
-- 3.2.4
-- 3.3.1
-- 4.0
-- 4.0.1
-- 4.0.2
-
----
-
 ## Pre-requisites for Convox Installation
 
 - Configure YUM repository.
