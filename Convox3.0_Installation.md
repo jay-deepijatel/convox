@@ -119,7 +119,8 @@ instmodsh -l
 ## Additional Package Installation
 
 ```bash
-yum install libtool* make gcc patch perl bison flex-devel gcc-c++ ncurses-flex libtermcap-devel autoconf* automake* autoconf libxml2-devel cmake openssl*
+yum install libtool* make gcc patch perl bison flex-devel gcc-c++ ncurses-flex libtermcap-devel autoconf* automake* autoconf libxml2-devel cmake openssl* -y
+yum -y install kernel-devel-$(uname -r) libtool* make gcc patch perl bison flex-devel gcc-c++ ncurses-devel flex libtermcap-devel autoconf* automake* autoconf libxml2-devel cmake
 ```
 
 Download from: `https://omnisupport.deepijatel.in/ahmed/`
@@ -207,3 +208,99 @@ svn checkout http://172.16.12.34/svn/ConVoxCCS3.0/tags/encrypted/Civil_Supplies_
 - Enter root password for your system
 - username : `aijaz`
 - password : `aijaz@1`
+
+
+Enable PHP Short Tag:
+
+```bash
+vim /etc/php.ini
+# Set: short_open_tag = on
+```
+
+---
+
+## Ioncube Installation
+
+Download and install:
+
+```bash
+wget https://downloads.ioncube.com/loader_downloads/ioncube_loaders_lin_x86-64.zip
+unzip ioncube_loaders_lin_x86-64.zip
+cd ioncube/
+scp ioncube_loader_lin_5.4.so /usr/lib64/php/modules/
+chmod -R 777 /usr/lib64/php/modules/ioncube_loader_lin_5.4.so
+```
+
+Edit `/etc/php.d/ooioncube.ini`:
+
+```ini
+ZEND_Extension=/usr/lib64/php/modules/ioncube_loader_lin_5.4.so
+```
+
+Restart httpd and refresh the page.
+
+---
+
+## MySQL DB Table Configuration
+
+- Password is in `/etc/convox3.conf`
+- Connect to MySQL:
+
+```bash
+mysql
+mysql> create database convoxccs3;
+mysql> GRANT ALL ON convoxccs3.* TO 'root'@'localhost' IDENTIFIED BY 'convox';
+mysql> GRANT ALL ON convoxccs3.* TO 'root'@'%' IDENTIFIED BY 'convox';
+mysql> GRANT ALL ON convoxccs3.* TO 'convox'@'localhost' IDENTIFIED BY 'convox';
+mysql> GRANT ALL ON convoxccs3.* TO 'convox'@'%' IDENTIFIED BY 'convox';
+mysql> flush privileges;
+```
+Configure:
+```bash
+cd Civil_Supplies_ENC/
+cd etc/
+scp -r * /etc
+cd ..
+cd usr/share/
+scp -r * /usr/share/
+cd ../../
+cd var/lib/
+scp -r * /var/lib
+cd ../
+cd www/html/
+scp -r * /var/www/html/
+cd ../../../
+cd database
+mysql -u convox -p convoxccs3 < convoxccs3.sql
+```
+- mysql password: `convox`
+
+- `/etc/convox32.conf`:
+  ```ini
+  crm_account_id=ACC1722
+  hostip=<network IP>
+  ethernet_port=enp2s0
+  asterisk_version=1.8
+  operational_hours=00
+  ```
+
+- `/etc/convoxwebpanel.conf`:
+  ```ini
+  serverIP=<your IP>
+  ```
+
+- `/etc/sysconfig/network-scripts/ifcfg-enp2so`:
+  ```ini
+  IPADDR=<your IP>
+  HWADDR=<MAC Address>
+  ```
+### restart services
+
+```bash
+systemctl restart httpd
+systemctl restart mariadb
+systemctl restart php-fpm.service
+```
+
+- Then go to your browser type your network IP
+
