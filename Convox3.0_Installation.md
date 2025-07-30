@@ -200,7 +200,7 @@ systemctl enable mariadb
 
 ## ConVox Installation (3.0)
 
-Download:
+Download: this under `/usr/src`
 
 ```bash
 svn checkout http://172.16.12.34/svn/ConVoxCCS3.0/tags/encrypted/Civil_Supplies_ENC/
@@ -221,7 +221,7 @@ vim /etc/php.ini
 
 ## Ioncube Installation
 
-Download and install under: `/usr/src`
+Download and install under: `/usr/src/`
 
 ```bash
 wget https://downloads.ioncube.com/loader_downloads/ioncube_loaders_lin_x86-64.zip
@@ -254,6 +254,7 @@ mysql> GRANT ALL ON convoxccs3.* TO 'root'@'%' IDENTIFIED BY 'convox';
 mysql> GRANT ALL ON convoxccs3.* TO 'convox'@'localhost' IDENTIFIED BY 'convox';
 mysql> GRANT ALL ON convoxccs3.* TO 'convox'@'%' IDENTIFIED BY 'convox';
 mysql> flush privileges;
+mysql> \q
 ```
 Configure:
 - Go to the Downloaded convoxtag location.
@@ -278,19 +279,18 @@ mysql password: `convox`
 
 - `/etc/convox3.conf`:
   ```ini
-  crm_account_id=ACC1722
-  hostip=<network IP>
-  ethernet_port=enp2s0
-  asterisk_version=1.8
-  operational_hours=00
+  hostip => <Your IP>
+  ethernet_port => <your ethernet port name>
+  asterisk_version => 1.4
+  operational_hours => 00
   ```
 
 - `/etc/convoxwebpanel.conf`:
   ```ini
-  serverIP=<your IP>
+  server_IP => <your IP>
   ```
 
-- `/etc/sysconfig/network-scripts/ifcfg-enp2so`:
+- `/etc/sysconfig/network-scripts/ifcfg-<your ethernet profile name>`:
   ```ini
   IPADDR=<your IP>
   HWADDR=<MAC Address>
