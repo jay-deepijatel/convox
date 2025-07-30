@@ -276,7 +276,7 @@ mysql -u convox -p convoxccs3 < convoxccs3.sql
 ```
 mysql password: `convox`
 
-- `/etc/convox32.conf`:
+- `/etc/convox3.conf`:
   ```ini
   crm_account_id=ACC1722
   hostip=<network IP>
