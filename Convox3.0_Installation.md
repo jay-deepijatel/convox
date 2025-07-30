@@ -205,7 +205,7 @@ Download:
 ```bash
 svn checkout http://172.16.12.34/svn/ConVoxCCS3.0/tags/encrypted/Civil_Supplies_ENC/
 ``` 
-- Enter root password for your system
+Enter root password for your system
 - username : `aijaz`
 - password : `aijaz@1`
 
@@ -221,7 +221,7 @@ vim /etc/php.ini
 
 ## Ioncube Installation
 
-Download and install:
+Download and install under: `/usr/src`
 
 ```bash
 wget https://downloads.ioncube.com/loader_downloads/ioncube_loaders_lin_x86-64.zip
@@ -256,6 +256,7 @@ mysql> GRANT ALL ON convoxccs3.* TO 'convox'@'%' IDENTIFIED BY 'convox';
 mysql> flush privileges;
 ```
 Configure:
+- Go to the Downloaded convoxtag location.
 ```bash
 cd Civil_Supplies_ENC/
 cd etc/
@@ -273,7 +274,7 @@ cd ../../../
 cd database
 mysql -u convox -p convoxccs3 < convoxccs3.sql
 ```
-- mysql password: `convox`
+mysql password: `convox`
 
 - `/etc/convox32.conf`:
   ```ini
