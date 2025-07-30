@@ -156,6 +156,26 @@ make install
 make samples
 cd ..
 ```
+### Asterisk-addons
+
+```bash
+tar -xvf asterisk-addons-1.4.6.tar.gz
+cd asterisk-addons-1.4.6.
+./configure
+make
+make install
+cd ..
+```
+
+### Asterisk-sounds
+
+```bash
+tar -xvf asterisk-sounds-1.2.1.tar
+cd asterisk-sounds-1.2.1
+make install
+cd ..
+```
+
 
 To start Asterisk:
 
@@ -182,3 +202,8 @@ systemctl enable mariadb
 Download:
 
 ```bash
+svn checkout http://172.16.12.34/svn/ConVoxCCS3.0/tags/encrypted/Civil_Supplies_ENC/
+``` 
+- Enter root password for your system
+- username : `aijaz`
+- password : `aijaz@1`
