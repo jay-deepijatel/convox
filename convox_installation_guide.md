@@ -121,7 +121,8 @@ instmodsh -l
 ## Additional Package Installation
 
 ```bash
-yum install libtool* make gcc patch perl bison flex-devel gcc-c++ ncurses-flex libtermcap-devel autoconf* automake* autoconf libxml2-devel cmake openssl*
+yum install libtool* make gcc patch perl bison flex-devel gcc-c++ ncurses-flex libtermcap-devel autoconf* automake* autoconf libxml2-devel cmake openssl* -y
+yum -y install kernel-devel-$(uname -r) libtool* make gcc patch perl bison flex-devel gcc-c++ ncurses-devel flex libtermcap-devel autoconf* automake* autoconf libxml2-devel cmake
 ```
 
 Download from: `https://omnisupport.deepijatel.in/ahmed/`
