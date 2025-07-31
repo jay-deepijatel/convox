@@ -182,7 +182,16 @@ systemctl enable mariadb
 
 ## ConVox Installation (3.2.4)
 
-Download:
+Download: `before running the script set root password for mysql`
+
+### To set root password
+```bash
+mysql
+mysql> USE mysql;
+mysql> ALTER USER 'root'@'localhost' IDENTIFIED BY 'your_new_password';
+mysql> FLUSH PRIVILEGES;
+```
+Install the script
 
 ```bash
 wget https://dtelhelp.deepija.com/Fathima/convoxccs-3.2.4_c58a11ff.zip
