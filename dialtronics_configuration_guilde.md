@@ -1,1 +1,1 @@
-
+# Dialtronincs Gateway Configurations.
