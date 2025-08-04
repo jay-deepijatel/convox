@@ -29,9 +29,10 @@ After that connect the lan cable to the laptop.
 3. The below picture you can able to show ethenet double click on it the go to properties
 <img width="578" height="282" alt="Dtel" src="https://github.com/user-attachments/assets/56ab7a03-d39c-4dfd-b498-7b18094040a4" />
 
-4. After that this tab will be open
+4. After that this tab will be open.
 <img width="275" height="350" alt="Screenshot 2025-08-02 152816" src="https://github.com/user-attachments/assets/17831c2d-2c72-45bc-8759-31b86301b292" />
-Double click **Internet protocol version4 (TCP/UDP)** and edit according to the below image
+
+- Double click **Internet protocol version4 (TCP/UDP)** and edit according to the below image.
 
 <img width="298" height="338" alt="IPVfour" src="https://github.com/user-attachments/assets/c088dffd-39c3-4624-be2a-1a8043e349ba" />
 click ok & ok button to save it.
