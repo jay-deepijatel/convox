@@ -1,0 +1,14 @@
+## Context from outbound Trunk
+bash ```
+    [Dev_64]
+    type = peer
+    username =
+    secret =
+    fromuser =
+    host = 172.16.13.64
+    fromdomain = 172.16.13.64
+    nat = yes
+    disallow = all
+    allow = ulaw
+    context=from-pstn
+```
